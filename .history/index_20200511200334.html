@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <h1 class="mx-auto">CURRENCY CONVERTER</h1>
+    <form>
+        <div class="form-row">
+            <div class="col">
+                <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+            </div>
+            <div class="col">
+                <label for="exampleFormControlSelect1">Example select</label>
+                <select class="form-control" id="fromCurrency">
+            </select>
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+            </div>
+        </div>
+    </form>
+    <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function() {
+            let selectList = Object.keys(dic);
+            var x = document.getElementById("fromCurrency");
+            selectList.forEach(element => {
+                var option = document.createElement("option");
+                option.text = element;
+                x.add(option);
+            });
+        })
+    </script>
+</body>
+
+</html>

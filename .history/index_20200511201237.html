@@ -19,35 +19,43 @@
 </head>
 
 <body>
-
-    <form class="container my-5">
-        <h1 class="mx-auto">CURRENCY CONVERTER</h1>
-        <div class="form-row justify-content-md-center">
+    <h1 class="mx-auto">CURRENCY CONVERTER</h1>
+    <form>
+        <div class="form-row">
             <div class="col mt-5">
-                <input type="number" class="form-control" placeholder="Amount" id="amount">
+                <input type="text" class="form-control" placeholder="Amount">
             </div>
             <div class="col mt-3">
-                <label>From</label>
+                <label for="exampleFormControlSelect1">From</label>
                 <select class="form-control" id="fromCurrency">
             </select>
             </div>
-            <div class="col mt-4 py-3" style="display: flex;justify-content: center;" onClick="swap()">
+            <div class="col mt-4 py-3">
                 <img src="https://cdn3.iconfinder.com/data/icons/basic-interface/100/update-512.png" width="50px" height="50px">
             </div>
             <div class="col mt-3">
-                <label>To</label>
+                <label for="exampleFormControlSelect1">To</label>
                 <select class="form-control" id="toCurrency">
             </select>
 
             </div>
             <div class="col mt-5">
-                <button type="submit" class="btn btn-primary mb-2" onClick="submitAmount()">Convert</button>
+                <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
             </div>
         </div>
-        <p id="result">aaaaaa</p>
     </form>
     <script src="js/script.js"></script>
     <script>
+        $(document).ready(function() {
+            let selectList = Object.keys(dic);
+            var fromCurrency = document.getElementById("fromCurrency");
+            var toCurrency = document.getElementById("toCurrency");
+            selectList.forEach(element => {
+                var option = document.createElement("option");
+                option.text = element;
+                fromCurrency.add(option);
+            });
+        })
     </script>
 </body>
 

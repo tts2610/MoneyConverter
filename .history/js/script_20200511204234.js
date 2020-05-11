@@ -47,9 +47,10 @@ function swap() {
 
 function submitAmount() {
     amount = document.getElementById("amount").value;
-    from = fromCurrency.value.toLowerCase();
-    to = toCurrency.value.toLowerCase();
-    document.getElementById("result").value = convert(from, to);
+    from = fromCurrency.value;
+    to = toCurrency.value;
+    alert(from)
+    document.getElementById("result").value = convert();
 }
 
 // loop to check validity

@@ -47,8 +47,9 @@ function swap() {
 
 function submitAmount() {
     amount = document.getElementById("amount").value;
-    from = fromCurrency.value.toLowerCase();
-    to = toCurrency.value.toLowerCase();
+    from = fromCurrency.value;
+    to = toCurrency.value;
+    alert(from)
     document.getElementById("result").value = convert(from, to);
 }
 

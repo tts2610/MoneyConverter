@@ -14,56 +14,25 @@ let dic = {
     "jpy": { "vnd": [216.703, "vi", "VND"], "usd": [1 / 107.297, "en", "USD"], "krw": [11.4099, "krw", "KRW"], "idr": [138.937, "idr", "idr"], "eur": [1 / 116.054, "de-DE", "EUR"], "jpy": [1, "ja-JP", "JPY"] },
     "krw": { "vnd": [18.9136, "vi", "VND"], "usd": [1 / 1224.06, "en", "USD"], "jpy": [1 / 11.4096, "ja-JP", "JPY"], "idr": [12.1833, "idr", "idr"], "eur": [1 / 1323.75, "de-DE", "EUR"], "krw": [1, "krw", "KRW"] },
     "idr": { "vnd": [1.55505, "vi", "VND"], "usd": [1 / 14910, "en", "USD"], "jpy": [1 / 138.985, "ja-JP", "JPY"], "krw": [1 / 12.1818, "krw", "KRW"], "eur": [1 / 16134.84, "de-DE", "EUR"], "idr": [1, "idr", "idr"] },
-    "eur": { "vnd": [25081, "vi", "VND"], "usd": [1.08207, "en", "USD"], "jpy": [116.054, "ja-JP", "JPY"], "idr": [16129, "idr", "idr"], "krw": [1323.75, "krw", "KRW"], "eur": [1, "de-DE", "EUR"] },
+    "eur": { "vnd": [25081, "vi", "VND"], "usd": [1.08207, "en", "USD"], "jpy": [116.054, "ja-JP", "JPY"], "idr": [16129, "idr", "idr"], "krw": [1323.75, "krw", "KRW"] },
 }
 let isValid = false;
 let from = null;
 let to = null;
 let amount = 0;
-var fromCurrency = null;
-var toCurrency = null;
-$(document).ready(function() {
-    fromCurrency = document.getElementById("fromCurrency");
-    toCurrency = document.getElementById("toCurrency");
-    let selectList = Object.keys(dic);
-    selectList.forEach(element => {
-        var option = document.createElement("option");
-        option.text = element.toUpperCase();
-        fromCurrency.add(option);
-    })
-    selectList.forEach(element => {
-        var option = document.createElement("option");
-        option.text = element.toUpperCase();
-        toCurrency.add(option);
-    })
-
-});
-
-function swap() {
-    var x = fromCurrency.value;
-    fromCurrency.value = toCurrency.value;
-    toCurrency.value = x;
-}
-
-function submitAmount() {
-    amount = document.getElementById("amount").value;
-    from = fromCurrency.value.toLowerCase();
-    to = toCurrency.value.toLowerCase();
-    document.getElementById("result").value = convert(from, to);
-}
 
 // loop to check validity
-// while (!isValid) {
-//     if (Object.keys(dic).includes(from) && Object.keys(dic).includes(to) && !isNaN(amount)) isValid = true;
-//     else {
-//         from = prompt("Which currency do you want to convert from?").toLowerCase();
-//         to = prompt("Which currency do you want to convert to?").toLowerCase();
-//         amount = prompt("Enter your amount to convert:");
-//     }
-// }
+while (!isValid) {
+    if (Object.keys(dic).includes(from) && Object.keys(dic).includes(to) && !isNaN(amount)) isValid = true;
+    else {
+        from = prompt("Which currency do you want to convert from?").toLowerCase();
+        to = prompt("Which currency do you want to convert to?").toLowerCase();
+        amount = prompt("Enter your amount to convert:");
+    }
+}
 
 // conversion
-function convert(from, to) {
+function convert() {
     let currencyRatio = dic[from][to][0];
     let locale = dic[from][to][1];
     let currency = dic[from][to][2];

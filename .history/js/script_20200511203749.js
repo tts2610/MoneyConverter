@@ -25,6 +25,7 @@ var toCurrency = null;
 $(document).ready(function() {
     fromCurrency = document.getElementById("fromCurrency");
     toCurrency = document.getElementById("toCurrency");
+    amount = document.getElementById("amount").value;
     let selectList = Object.keys(dic);
     selectList.forEach(element => {
         var option = document.createElement("option");
@@ -45,11 +46,10 @@ function swap() {
     toCurrency.value = x;
 }
 
-function submitAmount() {
-    amount = document.getElementById("amount").value;
-    from = fromCurrency.value.toLowerCase();
-    to = toCurrency.value.toLowerCase();
-    document.getElementById("result").value = convert(from, to);
+function submit() {
+
+    from = fromCurrency.value;
+    to = toCurrency.value;
 }
 
 // loop to check validity
@@ -63,7 +63,7 @@ function submitAmount() {
 // }
 
 // conversion
-function convert(from, to) {
+function convert() {
     let currencyRatio = dic[from][to][0];
     let locale = dic[from][to][1];
     let currency = dic[from][to][2];

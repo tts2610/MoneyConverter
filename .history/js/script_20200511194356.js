@@ -20,50 +20,19 @@ let isValid = false;
 let from = null;
 let to = null;
 let amount = 0;
-var fromCurrency = null;
-var toCurrency = null;
-$(document).ready(function() {
-    fromCurrency = document.getElementById("fromCurrency");
-    toCurrency = document.getElementById("toCurrency");
-    let selectList = Object.keys(dic);
-    selectList.forEach(element => {
-        var option = document.createElement("option");
-        option.text = element.toUpperCase();
-        fromCurrency.add(option);
-    })
-    selectList.forEach(element => {
-        var option = document.createElement("option");
-        option.text = element.toUpperCase();
-        toCurrency.add(option);
-    })
-
-});
-
-function swap() {
-    var x = fromCurrency.value;
-    fromCurrency.value = toCurrency.value;
-    toCurrency.value = x;
-}
-
-function submitAmount() {
-    amount = document.getElementById("amount").value;
-    from = fromCurrency.value.toLowerCase();
-    to = toCurrency.value.toLowerCase();
-    document.getElementById("result").value = convert(from, to);
-}
 
 // loop to check validity
-// while (!isValid) {
-//     if (Object.keys(dic).includes(from) && Object.keys(dic).includes(to) && !isNaN(amount)) isValid = true;
-//     else {
-//         from = prompt("Which currency do you want to convert from?").toLowerCase();
-//         to = prompt("Which currency do you want to convert to?").toLowerCase();
-//         amount = prompt("Enter your amount to convert:");
-//     }
-// }
+while (!isValid) {
+    if (Object.keys(dic).includes(from) && Object.keys(dic).includes(to) && !isNaN(amount)) isValid = true;
+    else {
+        from = prompt("Which currency do you want to convert from?").toLowerCase();
+        to = prompt("Which currency do you want to convert to?").toLowerCase();
+        amount = prompt("Enter your amount to convert:");
+    }
+}
 
 // conversion
-function convert(from, to) {
+function convert() {
     let currencyRatio = dic[from][to][0];
     let locale = dic[from][to][1];
     let currency = dic[from][to][2];

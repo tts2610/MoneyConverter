@@ -41,13 +41,43 @@
 
             </div>
             <div class="col mt-5">
-                <button type="submit" class="btn btn-primary mb-2" onClick="submitAmount()">Convert</button>
+                <button type="submit" class="btn btn-primary mb-2" onClick="submit()">Convert</button>
             </div>
         </div>
-        <p id="result">aaaaaa</p>
+        <p>aaaaaa</p>
     </form>
     <script src="js/script.js"></script>
     <script>
+        $(document).ready(function() {
+            let selectList = Object.keys(dic);
+            var fromCurrency = document.getElementById("fromCurrency");
+            var toCurrency = document.getElementById("toCurrency");
+            selectList.forEach(element => {
+                var option = document.createElement("option");
+                option.text = element.toUpperCase();
+                fromCurrency.add(option);
+            })
+            selectList.forEach(element => {
+                var option = document.createElement("option");
+                option.text = element.toUpperCase();
+                toCurrency.add(option);
+            })
+
+        });
+
+        function swap() {
+            var fromCurrency = document.getElementById("fromCurrency");
+            var x = fromCurrency.value;
+            var toCurrency = document.getElementById("toCurrency");
+            fromCurrency.value = toCurrency.value;
+            toCurrency.value = x;
+        }
+
+        function submit() {
+            amount = document.getElementById("amount");
+            from = fromCurrency.value;
+            to = toCurrency.value;
+        }
     </script>
 </body>
 

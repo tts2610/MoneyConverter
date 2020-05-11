@@ -19,12 +19,11 @@
 </head>
 
 <body>
-
-    <form class="container my-5">
-        <h1 class="mx-auto">CURRENCY CONVERTER</h1>
+    <h1 class="mx-auto">CURRENCY CONVERTER</h1>
+    <form>
         <div class="form-row justify-content-md-center">
             <div class="col mt-5">
-                <input type="number" class="form-control" placeholder="Amount" id="amount">
+                <input type="text" class="form-control" placeholder="Amount">
             </div>
             <div class="col mt-3">
                 <label>From</label>
@@ -41,13 +40,35 @@
 
             </div>
             <div class="col mt-5">
-                <button type="submit" class="btn btn-primary mb-2" onClick="submitAmount()">Convert</button>
+                <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
             </div>
         </div>
-        <p id="result">aaaaaa</p>
+        <p>aaaaaa</p>
     </form>
     <script src="js/script.js"></script>
     <script>
+        $(document).ready(function() {
+            let selectList = Object.keys(dic);
+            var fromCurrency = document.getElementById("fromCurrency");
+            var toCurrency = document.getElementById("toCurrency");
+            selectList.forEach(element => {
+                var option = document.createElement("option");
+                option.text = element;
+                fromCurrency.add(option);
+            })
+            selectList.forEach(element => {
+                var option = document.createElement("option");
+                option.text = element;
+                toCurrency.add(option);
+            })
+
+        });
+
+        function swap() {
+            var fromCurrency = document.getElementById("fromCurrency");
+            var toCurrency = document.getElementById("toCurrency");
+            alert(fromCurrency.value)
+        }
     </script>
 </body>
 

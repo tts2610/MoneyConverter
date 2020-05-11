@@ -49,6 +49,7 @@ function submitAmount() {
     amount = document.getElementById("amount").value;
     from = fromCurrency.value.toLowerCase();
     to = toCurrency.value.toLowerCase();
+    alert(from)
     document.getElementById("result").value = convert(from, to);
 }
 
