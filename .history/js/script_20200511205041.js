@@ -50,8 +50,8 @@ function submitAmount() {
     amount = document.getElementById("amount").value;
     from = fromCurrency.value.toLowerCase();
     to = toCurrency.value.toLowerCase();
-    document.getElementById("result").innerText = "Result: " + convert(from, to);
-    document.getElementById("result").style.color = "red"
+    document.getElementById("result").innerText = "Result: "
+    amount + from + " converted to " + convert(from, to) + to;
 }
 
 // conversion

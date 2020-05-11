@@ -51,7 +51,7 @@ function submitAmount() {
     from = fromCurrency.value.toLowerCase();
     to = toCurrency.value.toLowerCase();
     document.getElementById("result").innerText = "Result: " + convert(from, to);
-    document.getElementById("result").style.color = "red"
+    document.getElementById("result").style.color = "red";
 }
 
 // conversion

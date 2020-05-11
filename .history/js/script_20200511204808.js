@@ -25,7 +25,6 @@ var toCurrency = null;
 $(document).ready(function() {
     fromCurrency = document.getElementById("fromCurrency");
     toCurrency = document.getElementById("toCurrency");
-    document.getElementById("amount").value = 0;
     let selectList = Object.keys(dic);
     selectList.forEach(element => {
         var option = document.createElement("option");
@@ -47,11 +46,10 @@ function swap() {
 }
 
 function submitAmount() {
-    amount = document.getElementById("amount").value;
+    amount = document.getElementById("amount").value == 0 ? 1 : 0;
     from = fromCurrency.value.toLowerCase();
     to = toCurrency.value.toLowerCase();
     document.getElementById("result").innerText = "Result: " + convert(from, to);
-    document.getElementById("result").style.color = "red"
 }
 
 // conversion
@@ -62,3 +60,6 @@ function convert(from, to) {
     let res = (amount * currencyRatio);
     return new Intl.NumberFormat(locale, { style: 'currency', currency: currency, maximumSignificantDigits: 3 }).format(res);
 }
+
+// result
+// alert("Here is your result: " + convert())
