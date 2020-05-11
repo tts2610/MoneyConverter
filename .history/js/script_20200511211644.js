@@ -49,7 +49,7 @@ function submitAmount() {
     amount = document.getElementById("amount").value ? document.getElementById("amount").value : 0;
     from = fromCurrency.value.toLowerCase();
     to = toCurrency.value.toLowerCase();
-    document.getElementById("result").innerText = amount.parseInt().toFixed(3) + " " + from + " = " + convert(from, to);
+    document.getElementById("result").innerText = amount.toFixed(3) + " " + from + " = " + convert(from, to);
     document.getElementById("result").style.color = "deeppink";
     document.getElementById("result").style.fontWeight = 700;
 

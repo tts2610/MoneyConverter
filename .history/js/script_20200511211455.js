@@ -46,10 +46,10 @@ function swap() {
 }
 
 function submitAmount() {
-    amount = document.getElementById("amount").value ? document.getElementById("amount").value : 0;
+    amount = document.getElementById("amount").value;
     from = fromCurrency.value.toLowerCase();
     to = toCurrency.value.toLowerCase();
-    document.getElementById("result").innerText = amount.parseInt().toFixed(3) + " " + from + " = " + convert(from, to);
+    document.getElementById("result").innerText = amount + " " + from + " = " + convert(from, to);
     document.getElementById("result").style.color = "deeppink";
     document.getElementById("result").style.fontWeight = 700;
 
