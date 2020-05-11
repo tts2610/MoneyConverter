@@ -1,10 +1,8 @@
-// dictionary structure: {from:{to:[currencyRatio,locale,currency]}}
 let dic = {
     "vnd": { "usd": [1 / 23206, "en", "USD"], "jpy": [1 / 216.703, "ja-JP", "JPY"] },
-    "usd": { "vnd": [23206, "vi", "VND"], "jpy": [1 / 216.703, "ja-JP", "JPY"] },
-    "jpy": { "vnd": [216.703, "vi", "VND"], "usd": [1 / 23206, "en", "USD"] }
+    "usd": { "vnd": [23206, "vi", "VND"], "jpy": [1 / 216703, "ja-JP", "JPY"] },
+    "jpy": { "vnd": [216703, "vi", "VND"], "usd": [1 / 23206, "en", "USD"] }
 }
-
 
 let isValid = false;
 let from = null;
