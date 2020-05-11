@@ -1,11 +1,4 @@
-/*dic = {
-    fromCurrency:{
-        toCurrency:[currencyRatio,locale,currencySymbol],
-        toCurrency:[currencyRatio,locale,currencySymbol],
-        toCurrency:[currencyRatio,locale,currencySymbol],
-        .....
-    }
-}*/
+// dictionary structure: {fromCurrency:{toCurrency:[currencyRatio,locale,currencySymbol]}}
 let dic = {
     "vnd": { "usd": [1 / 23206, "en", "USD"], "jpy": [1 / 216.703, "ja-JP", "JPY"], "krw": [1 / 18.9136, "krw", "KRW"], "idr": [1 / 1.55505, "idr", "idr"], "eur": [1 / 25111, "de-DE", "EUR"] },
     "usd": { "vnd": [23206, "vi", "VND"], "jpy": [1 / 216.703, "ja-JP", "JPY"], "krw": [1223.80, "krw", "KRW"], "idr": [14904, "idr", "idr"], "eur": [1 / 1.08207, "de-DE", "EUR"] },

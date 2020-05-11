@@ -1,17 +1,10 @@
-/*dic = {
-    fromCurrency:{
-        toCurrency:[currencyRatio,locale,currencySymbol],
-        toCurrency:[currencyRatio,locale,currencySymbol],
-        toCurrency:[currencyRatio,locale,currencySymbol],
-        .....
-    }
-}*/
+// dictionary structure: {fromCurrency:{toCurrency:[currencyRatio,locale,currencySymbol]}}
 let dic = {
     "vnd": { "usd": [1 / 23206, "en", "USD"], "jpy": [1 / 216.703, "ja-JP", "JPY"], "krw": [1 / 18.9136, "krw", "KRW"], "idr": [1 / 1.55505, "idr", "idr"], "eur": [1 / 25111, "de-DE", "EUR"] },
     "usd": { "vnd": [23206, "vi", "VND"], "jpy": [1 / 216.703, "ja-JP", "JPY"], "krw": [1223.80, "krw", "KRW"], "idr": [14904, "idr", "idr"], "eur": [1 / 1.08207, "de-DE", "EUR"] },
     "jpy": { "vnd": [216.703, "vi", "VND"], "usd": [1 / 23206, "en", "USD"], "krw": [11.4099, "krw", "KRW"], "idr": [138.937, "idr", "idr"], "eur": [1 / 116.054, "de-DE", "EUR"] },
     "krw": { "vnd": [18.9136, "vi", "VND"], "usd": [1 / 1224.06, "en", "USD"], "jpy": [1 / 11.4096, "ja-JP", "JPY"], "idr": [12.1833, "idr", "idr"], "eur": [1 / 1323.75, "de-DE", "EUR"] },
-    "idr": { "vnd": [1.55505, "vi", "VND"], "usd": [1 / 14910, "en", "USD"], "jpy": [1 / 138.985, "ja-JP", "JPY"], "krw": [1 / 12.1818, "krw", "KRW"], "eur": [1 / 16134.84, "de-DE", "EUR"] },
+    "idr": { "vnd": [1.55505, "vi", "VND"], "usd": [1 / 14910, "en", "USD"], "jpy": [1 / 138.985, "ja-JP", "JPY"] },
     "eur": { "vnd": [25081, "vi", "VND"], "usd": [1.08207, "en", "USD"], "jpy": [116.054, "ja-JP", "JPY"], "idr": [16129, "idr", "idr"], "krw": [1323.75, "krw", "KRW"] },
 }
 let isValid = false;
