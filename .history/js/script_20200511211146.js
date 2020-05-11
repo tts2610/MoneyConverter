@@ -53,6 +53,7 @@ function submitAmount() {
     document.getElementById("result").innerText = amount + " " + from + " = " + convert(from, to);
     document.getElementById("result").style.color = "deeppink";
     document.getElementById("result").style.fontWeight = 700;
+    document.getElementById("result").style.textDecoration = "underline";
 
 }
 
