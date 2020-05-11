@@ -28,5 +28,4 @@ function convert() {
     return new Intl.NumberFormat(locale, { style: 'currency', currency: currency, maximumSignificantDigits: 3 }).format(res);
 }
 
-// result
 alert("Here is your result: " + convert())

@@ -19,7 +19,6 @@ while (!isValid) {
     }
 }
 
-// conversion
 function convert() {
     let currencyRatio = dic[from][to][0];
     let locale = dic[from][to][1];
@@ -28,5 +27,4 @@ function convert() {
     return new Intl.NumberFormat(locale, { style: 'currency', currency: currency, maximumSignificantDigits: 3 }).format(res);
 }
 
-// result
 alert("Here is your result: " + convert())
