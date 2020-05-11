@@ -22,7 +22,7 @@ function convert() {
     let locale = dic[from][to][1];
     let currency = dic[from][to][2];
     res = (amount * currencyRatio);
-    return new Intl.NumberFormat(locale, { style: 'currency', currency: currency }).format(res);
+    return new Intl.NumberFormat(locale, { style: 'currency', currency: currency, maximumSignificantDigits: 3 }).format(res);
 }
 
 alert("Here is your result: " + convert())
