@@ -16,6 +16,7 @@ let dic = {
     "idr": { "vnd": [1.55505, "vi", "VND"], "usd": [1 / 14910, "en", "USD"], "jpy": [1 / 138.985, "ja-JP", "JPY"], "krw": [1 / 12.1818, "krw", "KRW"], "eur": [1 / 16134.84, "de-DE", "EUR"], "idr": [1, "idr", "idr"] },
     "eur": { "vnd": [25081, "vi", "VND"], "usd": [1.08207, "en", "USD"], "jpy": [116.054, "ja-JP", "JPY"], "idr": [16129, "idr", "idr"], "krw": [1323.75, "krw", "KRW"], "eur": [1, "de-DE", "EUR"] },
 }
+let isValid = false;
 let from = null;
 let to = null;
 let amount = 0;
@@ -48,25 +49,17 @@ function submitAmount() {
     amount = document.getElementById("amount").value ? document.getElementById("amount").value : 0;
     from = fromCurrency.value.toLowerCase();
     to = toCurrency.value.toLowerCase();
-
-    // reformating
-    let res = formatingOutput(from, from);
-    let formatedAmount = new Intl.NumberFormat(res[1], { style: 'currency', currency: res[2], maximumSignificantDigits: 3 }).format(amount)
-
-    // set output
+    let formatedAmount = new Intl.NumberFormat(dic[from][from][1], { style: 'currency', currency: dic[from][from][2], maximumSignificantDigits: 3 }).format(amount)
     document.getElementById("result").innerText = formatedAmount + " = " + convert(from, to);
+    document.getElementById("result").style.color = "deeppink";
+    document.getElementById("result").style.fontWeight = 700;
 }
 
 // conversion
 function convert(from, to) {
-    let res = formatingOutput(from, to);
-    let outRes = (amount * res[0]);
-    return new Intl.NumberFormat(res[1], { style: 'currency', currency: res[2], maximumSignificantDigits: 3 }).format(outRes);
-}
-
-function formatingOutput(input1, input2) {
-    let currencyRatio = dic[input1][input2][0];
-    let locale = dic[input1][input2][1];
-    let currency = dic[input1][input2][2];
-    return [currencyRatio, locale, currency];
+    let currencyRatio = dic[from][to][0];
+    let locale = dic[from][to][1];
+    let currency = dic[from][to][2];
+    let res = (amount * currencyRatio);
+    return new Intl.NumberFormat(locale, { style: 'currency', currency: currency, maximumSignificantDigits: 3 }).format(res);
 }

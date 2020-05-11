@@ -26,15 +26,16 @@ $(document).ready(function() {
     toCurrency = document.getElementById("toCurrency");
     let selectList = Object.keys(dic);
     selectList.forEach(element => {
-        var option = document.createElement("option");
-        option.text = element.toUpperCase();
-        fromCurrency.add(option);
-    })
-    selectList.forEach(element => {
-        var option = document.createElement("option");
-        option.text = element.toUpperCase();
-        toCurrency.add(option);
-    })
+            var option = document.createElement("option");
+            option.text = element.toUpperCase();
+            fromCurrency.add(option);
+            toCurrency.add(option);
+        })
+        // selectList.forEach(element => {
+        //     var option = document.createElement("option");
+        //     option.text = element.toUpperCase();
+
+    // })
 
 });
 
@@ -53,8 +54,10 @@ function submitAmount() {
     let res = formatingOutput(from, from);
     let formatedAmount = new Intl.NumberFormat(res[1], { style: 'currency', currency: res[2], maximumSignificantDigits: 3 }).format(amount)
 
-    // set output
+    // add css
     document.getElementById("result").innerText = formatedAmount + " = " + convert(from, to);
+    document.getElementById("result").style.color = "deeppink";
+    document.getElementById("result").style.fontWeight = 700;
 }
 
 // conversion

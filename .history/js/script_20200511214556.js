@@ -16,6 +16,7 @@ let dic = {
     "idr": { "vnd": [1.55505, "vi", "VND"], "usd": [1 / 14910, "en", "USD"], "jpy": [1 / 138.985, "ja-JP", "JPY"], "krw": [1 / 12.1818, "krw", "KRW"], "eur": [1 / 16134.84, "de-DE", "EUR"], "idr": [1, "idr", "idr"] },
     "eur": { "vnd": [25081, "vi", "VND"], "usd": [1.08207, "en", "USD"], "jpy": [116.054, "ja-JP", "JPY"], "idr": [16129, "idr", "idr"], "krw": [1323.75, "krw", "KRW"], "eur": [1, "de-DE", "EUR"] },
 }
+let isValid = false;
 let from = null;
 let to = null;
 let amount = 0;
@@ -49,12 +50,14 @@ function submitAmount() {
     from = fromCurrency.value.toLowerCase();
     to = toCurrency.value.toLowerCase();
 
-    // reformating
+    // reformat input
     let res = formatingOutput(from, from);
     let formatedAmount = new Intl.NumberFormat(res[1], { style: 'currency', currency: res[2], maximumSignificantDigits: 3 }).format(amount)
 
-    // set output
+    // add css
     document.getElementById("result").innerText = formatedAmount + " = " + convert(from, to);
+    document.getElementById("result").style.color = "deeppink";
+    document.getElementById("result").style.fontWeight = 700;
 }
 
 // conversion

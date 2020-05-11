@@ -53,8 +53,10 @@ function submitAmount() {
     let res = formatingOutput(from, from);
     let formatedAmount = new Intl.NumberFormat(res[1], { style: 'currency', currency: res[2], maximumSignificantDigits: 3 }).format(amount)
 
-    // set output
+    // add css
     document.getElementById("result").innerText = formatedAmount + " = " + convert(from, to);
+    // document.getElementById("result").style.color = "deeppink";
+    // document.getElementById("result").style.fontWeight = 700;
 }
 
 // conversion
