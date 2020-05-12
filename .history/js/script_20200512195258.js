@@ -41,14 +41,14 @@ $(document).ready(function() {
 
 function swap() {
     let x = fromCurrency.value;
-    fromCurrency.value = getSelectedRadio();
+    fromCurrency.value = getSelectedRatio();
     document.getElementById(x).checked = true;
 }
 
 function submitAmount() {
     amount = document.getElementById("amount").value || 0;
     from = fromCurrency.value.toLowerCase();
-    to = getSelectedRadio().toLowerCase();
+    to = getSelectedRatio().toLowerCase();
 
     // reformating input
     let res = getValueFromDict(from, from);
@@ -76,8 +76,8 @@ function generateRadioElement(element, i) {
     let div = document.createElement("div");
     div.classList.add("form-check");
     let input = document.createElement("input");
-    input.classList.add("form-check-input");
-    input.type = "radio";
+    input.classList.add("form-check-input")
+    input.type = "radio"
     input.name = "toProperty";
     input.id = element.toUpperCase();
     if (i === 0) {
@@ -93,7 +93,7 @@ function generateRadioElement(element, i) {
     return div;
 }
 
-function getSelectedRadio() {
+function getSelectedRatio() {
     let radios = exchangeForm.elements["toProperty"];
     let val;
     radios.forEach(element => {
