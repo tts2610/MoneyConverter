@@ -40,7 +40,7 @@ $(document).ready(function() {
 });
 
 function swap() {
-    let x = fromCurrency.value;
+    var x = fromCurrency.value;
     fromCurrency.value = getSelectedRatio();
     document.getElementById(x).checked = true;
 }
@@ -73,9 +73,9 @@ function getValueFromDict(input1, input2) {
 }
 
 function generateRadioElement(element, i) {
-    let div = document.createElement("div");
+    var div = document.createElement("div");
     div.classList.add("form-check");
-    let input = document.createElement("input");
+    var input = document.createElement("input");
     input.classList.add("form-check-input")
     input.type = "radio"
     input.name = "toProperty";
@@ -85,7 +85,7 @@ function generateRadioElement(element, i) {
         input.add
     }
 
-    let label = document.createElement("label");
+    var label = document.createElement("label");
     label.classList.add("form-check-label");
     label.innerHTML = element.toUpperCase();
 

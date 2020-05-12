@@ -85,7 +85,7 @@ function generateRadioElement(element, i) {
         input.add
     }
 
-    let label = document.createElement("label");
+    var label = document.createElement("label");
     label.classList.add("form-check-label");
     label.innerHTML = element.toUpperCase();
 
