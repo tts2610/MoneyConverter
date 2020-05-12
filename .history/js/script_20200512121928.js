@@ -76,7 +76,6 @@ function getValueFromDict(input1, input2) {
 function exchange() {
     // reset the result div
     document.getElementById("coinExchangeResult").innerHTML = "";
-
     let bills = [500000, 200000, 100000, 50000, 20000, 10000, 5000, 2000, 1000]
     let amount = parseInt(document.getElementById("coinExchange").value);
     while (amount != 0) {
