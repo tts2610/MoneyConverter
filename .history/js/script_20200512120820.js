@@ -77,15 +77,17 @@ function exchange() {
     let bills = [500000, 200000, 100000, 50000, 20000, 10000, 5000, 2000, 1000]
     let amount = parseInt(document.getElementById("coinExchange").value);
     while (amount != 0) {
-        bills.forEach(element => {
-            let count = 0;
-            while (amount >= element) {
-                count++;
-                amount = amount - element;
-            }
-            let wrapper = document.getElementById("coinExchangeResult");
+        bills.forEach((element, i) => {
+            setTimeout(() => {
+                let count = 0;
+                while (amount >= element) {
+                    count++;
+                    amount = amount - element;
+                }
+                let wrapper = document.getElementById("coinExchangeResult");
 
-            wrapper.innerHTML += '<div>' + count + " x " + element + "\n" + "</div>";
-        });
+                wrapper.innerHTML += '<div>' + count + " x " + element + "\n" + "</div>";
+            }, i * 1000);
+        })
     }
 }
