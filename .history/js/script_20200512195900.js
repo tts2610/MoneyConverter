@@ -112,7 +112,6 @@ function exchange() {
 
     let bills = [500000, 200000, 100000, 50000, 20000, 10000, 5000, 2000, 1000]
     let amount = parseInt(document.getElementById("coinExchange").value);
-    let wrapper = document.getElementById("coinExchangeResult");
     while (amount) {
         bills.forEach(element => {
             let count = 0;
@@ -120,7 +119,7 @@ function exchange() {
                 count++;
                 amount = amount - element;
             }
-            wrapper.innerHTML += '<div>' + count + " x " + element + "</div>";
+            wrapper.innerHTML += '<div>' + count + " x " + element + "\n" + "</div>";
         });
     }
 }

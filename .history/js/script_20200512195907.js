@@ -120,7 +120,7 @@ function exchange() {
                 count++;
                 amount = amount - element;
             }
-            wrapper.innerHTML += '<div>' + count + " x " + element + "</div>";
+            wrapper.innerHTML += '<div>' + count + " x " + element + "\n" + "</div>";
         });
     }
 }
