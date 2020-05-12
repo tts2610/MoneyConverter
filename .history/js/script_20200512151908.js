@@ -41,14 +41,21 @@ $(document).ready(function() {
 
 function swap() {
     var x = fromCurrency.value;
-    fromCurrency.value = getSelectedRatio();
-    document.getElementById(x).checked = true;
+    let radios = exchangeForm.elements["toProperty"];
+    radios.forEach(element => {
+        if (element.checked) { // radio checked?
+            // fromCurrency.value = element.value;
+            alert(element.value);
+            break;
+        }
+    });
+    toCurrency.value = x;
 }
 
 function submitAmount() {
     amount = document.getElementById("amount").value ? document.getElementById("amount").value : 0;
     from = fromCurrency.value.toLowerCase();
-    to = getSelectedRatio();
+    to = toCurrency.value.toLowerCase();
 
     // reformating input
     let res = getValueFromDict(from, from);
@@ -82,7 +89,6 @@ function generateRadioElement(element, i) {
     input.id = element.toUpperCase();
     if (i === 0) {
         input.checked = true;
-        input.add
     }
 
     var label = document.createElement("label");
@@ -92,17 +98,6 @@ function generateRadioElement(element, i) {
     div.appendChild(input);
     div.appendChild(label);
     return div;
-}
-
-function getSelectedRatio() {
-    let radios = exchangeForm.elements["toProperty"];
-    let val;
-    radios.forEach(element => {
-        if (element.checked) { // radio checked?
-            val = element.id;
-        }
-    });
-    return val;
 }
 
 

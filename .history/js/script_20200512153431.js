@@ -48,7 +48,7 @@ function swap() {
 function submitAmount() {
     amount = document.getElementById("amount").value ? document.getElementById("amount").value : 0;
     from = fromCurrency.value.toLowerCase();
-    to = getSelectedRatio();
+    to = toCurrency.value.toLowerCase();
 
     // reformating input
     let res = getValueFromDict(from, from);

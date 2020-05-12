@@ -49,6 +49,7 @@ function submitAmount() {
     amount = document.getElementById("amount").value ? document.getElementById("amount").value : 0;
     from = fromCurrency.value.toLowerCase();
     to = getSelectedRatio();
+    alert(to)
 
     // reformating input
     let res = getValueFromDict(from, from);

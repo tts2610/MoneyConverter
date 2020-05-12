@@ -19,9 +19,8 @@ let dic = {
 let from = null;
 let to = null;
 let amount = 0;
-let fromCurrency = null;
-let toCurrency = null;
-let form = document.getElementById('exchangeForm');
+var fromCurrency = null;
+var toCurrency = null;
 $(document).ready(function() {
     fromCurrency = document.getElementById("fromCurrency");
     toCurrency = document.getElementById("toCurrency");
@@ -32,23 +31,40 @@ $(document).ready(function() {
         fromCurrency.add(option);
     })
     selectList.forEach((element, i) => {
+        // var div = document.createElement("div");
+        // div.classList.add("form-check");
+        // var input = document.createElement("input");
+        // input.classList.add("form-check-input")
+        // input.type = "radio"
+        // if (i == 0) {
+        //     input.checked = true;
+        // }
 
-        let div = generateRadioElement(element, i);
-        toCurrency.append(div);
+        // var label = document.createElement("label");
+        // label.classList.add("form-check-label");
+        // label.innerHTML = element.toUpperCase();
+
+        // div.appendChild(input);
+        // div.appendChild(label);
+
+        // // var option = document.createElement("option");
+        // // option.text = element.toUpperCase();
+        // radioElement = '<div class=\"form-check\"><input class=\"form-check-input\" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"><label class="form-check-label" for="exampleRadios1" id="toCurrency">' + element.toUpperCase(); + '</label></div>';
+        // toCurrency.append(div);
     })
 
 });
 
 function swap() {
     var x = fromCurrency.value;
-    fromCurrency.value = getSelectedRatio();
-    document.getElementById(x).checked = true;
+    fromCurrency.value = toCurrency.value;
+    toCurrency.value = x;
 }
 
 function submitAmount() {
     amount = document.getElementById("amount").value ? document.getElementById("amount").value : 0;
     from = fromCurrency.value.toLowerCase();
-    to = getSelectedRatio();
+    to = toCurrency.value.toLowerCase();
 
     // reformating input
     let res = getValueFromDict(from, from);
@@ -70,39 +86,6 @@ function getValueFromDict(input1, input2) {
     let locale = dic[input1][input2][1];
     let currency = dic[input1][input2][2];
     return [currencyRatio, locale, currency];
-}
-
-function generateRadioElement(element, i) {
-    var div = document.createElement("div");
-    div.classList.add("form-check");
-    var input = document.createElement("input");
-    input.classList.add("form-check-input")
-    input.type = "radio"
-    input.name = "toProperty";
-    input.id = element.toUpperCase();
-    if (i === 0) {
-        input.checked = true;
-        input.add
-    }
-
-    var label = document.createElement("label");
-    label.classList.add("form-check-label");
-    label.innerHTML = element.toUpperCase();
-
-    div.appendChild(input);
-    div.appendChild(label);
-    return div;
-}
-
-function getSelectedRatio() {
-    let radios = exchangeForm.elements["toProperty"];
-    let val;
-    radios.forEach(element => {
-        if (element.checked) { // radio checked?
-            val = element.id;
-        }
-    });
-    return val;
 }
 
 
