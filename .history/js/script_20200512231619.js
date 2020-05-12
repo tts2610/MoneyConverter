@@ -119,7 +119,7 @@ function exchange() {
                 count++;
                 amount = amount - element;
             }
-            wrapper.innerHTML += '<div>' + count + " x " + "<img src='img/" + element + ".jpg' width=343 height=147></div>";
+            wrapper.innerHTML += '<div>' + count + " x " + "<img src='img/" + element + "'></div>";
         });
     }
 }

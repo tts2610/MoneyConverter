@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <form class="container my-5 px-5 py-5" style="
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+" id="exchangeForm">
+        <h1 class="mx-auto" style="text-align: center;">CURRENCY CONVERTER</h1>
+        <div class="form-row justify-content-md-center px-5 mx-5">
+            <div class="col mt-3">
+                <label>Amount</label>
+                <input type="number" class="form-control" placeholder="0" id="amount" min="0">
+            </div>
+            <div class="col mt-3 ml-3">
+                <label>From</label>
+                <select class="form-control" id="fromCurrency">
+            </select>
+            </div>
+            <div class="col mt-4 py-3" style="display: flex;justify-content: center; cursor: pointer;" onClick="swap()">
+                <img src="https://cdn3.iconfinder.com/data/icons/basic-interface/100/update-512.png" width="50px" height="50px">
+            </div>
+            <div class="col mt-3">
+                <label>To</label>
+                <div id="toCurrency">
+                </div>
+                </select>
+
+            </div>
+            <div class="col mt-5 ml-3">
+                <button type="button" class="btn btn-success" onClick="submitAmount()">Convert</button>
+            </div>
+        </div>
+        <p id="result" style="color:deeppink; font-weight: 700; font-size: xxx-large; text-align: center;"></p>
+    </form>
+    <div class="container py-4 px-5 mb-4" style="background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);">
+        <h1 style="text-align: center;">COIN EXCHANGE (SUPER ROCKET)</h1>
+        <form>
+            <img src="/" <div class="form-group">
+            <label for="exampleInputEmail1">Enter your exchange amount:</label>
+            <input type="number" min="0" class="form-control" id="coinExchange" placeholder="Amount">
+    </div>
+    <button type="button" class="btn btn-primary" onClick="exchange()">Submit</button>
+    <div id="coinExchangeResult" style="color:deeppink; font-weight: 700; font-size: xxx-large; text-align: center;">Result:</div>
+    </form>
+    </div>
+
+
+
+    <script src="js/script.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>
