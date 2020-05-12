@@ -84,9 +84,10 @@ function exchange() {
                 amount = amount - element;
             }
             let wrapper = document.getElementById("coinExchangeResult");
+            setTimeout(function() {
+                wrapper.innerHTML += '<div>' + count + " x " + element + "\n" + "</div>";
+            }, 1000);
 
-            wrapper.innerHTML += '<div>' + count + " x " + element + "\n" + "</div>";
-
-        })
+        });
     }
 }
